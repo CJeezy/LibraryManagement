@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="elibrarydbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'elibrarydb.dbo.admin_tbl' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="admin_tbl">
+          <Property Name="admin_username" Type="nvarchar" MaxLength="50" />
+          <Property Name="admin_pw" Type="nvarchar" MaxLength="50" />
+          <Property Name="full_name" Type="nvarchar" MaxLength="50" />
+        </EntityType>-->
+  <EntityType Name="author_tbl">
+    <Key>
+      <PropertyRef Name="author_id" />
+    </Key>
+    <Property Name="author_id" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="author_name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="book_tbl">
+    <Key>
+      <PropertyRef Name="book_id" />
+    </Key>
+    <Property Name="book_id" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="book_name" Type="nvarchar(max)" />
+    <Property Name="book_genre" Type="nvarchar" MaxLength="50" />
+    <Property Name="author_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="publisher_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="book_language" Type="nvarchar" MaxLength="50" />
+    <Property Name="book_edition" Type="nvarchar" MaxLength="50" />
+    <Property Name="book_quantity" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'elibrarydb.dbo.borrower_tbl' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="borrower_tbl">
+          <Property Name="member_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="member_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="book_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="book_name" Type="nvarchar(max)" />
+          <Property Name="issue_date" Type="nvarchar" MaxLength="50" />
+          <Property Name="return_date" Type="nvarchar" MaxLength="50" />
+        </EntityType>-->
+  <EntityType Name="member_tbl">
+    <Key>
+      <PropertyRef Name="member_id" />
+    </Key>
+    <Property Name="member_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="full_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="birthdate" Type="nvarchar" MaxLength="50" />
+    <Property Name="state" Type="nvarchar" MaxLength="50" />
+    <Property Name="city" Type="nvarchar" MaxLength="50" />
+    <Property Name="zipcode" Type="nvarchar" MaxLength="50" />
+    <Property Name="address" Type="nvarchar(max)" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" />
+    <Property Name="phone_number" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'elibrarydb.dbo.publisher_tbl' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="publisher_tbl">
+          <Property Name="publisher_id" Type="nchar" MaxLength="10" />
+          <Property Name="publisher_name" Type="nvarchar(max)" />
+        </EntityType>-->
+  <EntityContainer Name="elibrarydbModelStoreContainer">
+    <EntitySet Name="author_tbl" EntityType="Self.author_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="book_tbl" EntityType="Self.book_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="member_tbl" EntityType="Self.member_tbl" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

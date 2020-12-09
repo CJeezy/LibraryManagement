@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="elibrarydbModelStoreContainer" CdmEntityContainer="DBModels">
+    <EntitySetMapping Name="author_tbl">
+      <EntityTypeMapping TypeName="elibrarydbModel.author_tbl">
+        <MappingFragment StoreEntitySet="author_tbl">
+          <ScalarProperty Name="author_id" ColumnName="author_id" />
+          <ScalarProperty Name="author_name" ColumnName="author_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="book_tbl">
+      <EntityTypeMapping TypeName="elibrarydbModel.book_tbl">
+        <MappingFragment StoreEntitySet="book_tbl">
+          <ScalarProperty Name="book_id" ColumnName="book_id" />
+          <ScalarProperty Name="book_name" ColumnName="book_name" />
+          <ScalarProperty Name="book_genre" ColumnName="book_genre" />
+          <ScalarProperty Name="author_name" ColumnName="author_name" />
+          <ScalarProperty Name="publisher_name" ColumnName="publisher_name" />
+          <ScalarProperty Name="book_language" ColumnName="book_language" />
+          <ScalarProperty Name="book_edition" ColumnName="book_edition" />
+          <ScalarProperty Name="book_quantity" ColumnName="book_quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="member_tbl">
+      <EntityTypeMapping TypeName="elibrarydbModel.member_tbl">
+        <MappingFragment StoreEntitySet="member_tbl">
+          <ScalarProperty Name="member_id" ColumnName="member_id" />
+          <ScalarProperty Name="full_name" ColumnName="full_name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="birthdate" ColumnName="birthdate" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="zipcode" ColumnName="zipcode" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
