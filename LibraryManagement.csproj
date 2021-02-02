@@ -1756,6 +1756,7 @@
     <Content Include="AdminLogin.aspx" />
     <Content Include="UserSignUp.aspx" />
     <Content Include="UserBookInv.aspx" />
+    <Content Include="UserProfile.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminBookInv.aspx.cs">
@@ -1838,6 +1839,13 @@
     </Compile>
     <Compile Include="UserBookInv.aspx.designer.cs">
       <DependentUpon>UserBookInv.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile.aspx.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserProfile.aspx.designer.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

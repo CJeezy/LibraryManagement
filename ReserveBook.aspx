@@ -31,7 +31,7 @@
                                 <label>Book ID</label>
                                 <div class="input-group">
                                     <asp:TextBox class="form-control" ID="BookID" runat="server" placeholder="Book ID"></asp:TextBox>
-                                    <asp:Button for="BookID" class="btn btn-dark" ID="Button1" runat="server" Text="Go" OnClick="GetNames_Click" />
+                                    <asp:Button for="BookID" class="btn btn-dark" ID="Button1" runat="server" Text="Fill" OnClick="GetNames_Click" />
                                 </div>
                             </div>
                         </div>

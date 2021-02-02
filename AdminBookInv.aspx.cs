@@ -137,19 +137,20 @@ namespace LibraryManagement
         {
             if (CheckIfBookExists())
             {
+                
                 string genres = "";
                 foreach (int i in ListBox1.GetSelectedIndices())
                 {
                     genres = genres + ListBox1.Items[i] + ",";
                 }
                 genres = genres.Remove(genres.Length - 1);
+                
 
                 SqlConnection con = new SqlConnection(connStr);
                 if (con.State == ConnectionState.Closed) { con.Open(); }
 
-                SqlCommand cmd = new SqlCommand("UPDATE book_tbl(book_id=@book_id, book_name=@book_name, book_genre=@book_genre, author_name=@author_name, publisher_name=@publisher_name, book_language=@book_language, book_edition=@book_edition, book_quantity=@book_quantity)", con);
+                SqlCommand cmd = new SqlCommand(" UPDATE book_tbl SET book_name=@book_name, book_genre=@book_genre, author_name=@author_name, publisher_name=@publisher_name, book_language=@book_language, book_edition=@book_edition, book_quantity=@book_quantity WHERE book_id='" + BookID.Text.Trim() + "'", con);
 
-                cmd.Parameters.AddWithValue("@book_id", BookID.Text.Trim());
                 cmd.Parameters.AddWithValue("@book_name", BookName.Text.Trim());
                 cmd.Parameters.AddWithValue("@author_name", Author.Text.Trim());
                 cmd.Parameters.AddWithValue("@book_genre", genres);
@@ -160,6 +161,9 @@ namespace LibraryManagement
 
                 cmd.ExecuteNonQuery();
                 con.Close();
+                GridView1.DataBind();
+
+                Response.Write("<script>alert('Book Updated Successfully');</script>");
             }
         }
 

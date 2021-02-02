@@ -79,5 +79,11 @@ namespace LibraryManagement
 
             Response.Redirect("HomePage.aspx");
         }
+
+        protected void UserProf_Click(object sender, EventArgs e)
+        {
+            if (Session["role"].Equals("user")) Response.Redirect("UserProfile.aspx");
+            else if (Session["role"].Equals("admin")) Response.Redirect("ReserveBook.aspx");
+        }
     }
 }

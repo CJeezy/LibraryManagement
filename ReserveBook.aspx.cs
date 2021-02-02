@@ -186,7 +186,7 @@ namespace LibraryManagement
                 {
                     con.Open();
                 }
-                SqlCommand cmd = new SqlCommand("SELECT * FROM borrower_btl WHERE member_id='" + Username.Text.Trim() + "'", con);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM borrower_tbl WHERE member_id='" + Username.Text.Trim() + "' AND book_id='" + BookID.Text.Trim() + "'", con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);

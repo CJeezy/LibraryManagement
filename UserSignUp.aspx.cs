@@ -89,8 +89,8 @@ namespace LibraryManagement
                 cmd.ExecuteNonQuery();
                 con.Close();
 
-                Response.Write("<script>alert('Sign Up Successful!');</script>");
-                Response.Redirect("HomePage.aspx");
+                Response.Write("<script>alert('User Successfully Added!');</script>");
+                Response.Redirect("UserLogin.aspx");
 
             }
             catch(Exception ex)

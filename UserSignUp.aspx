@@ -8,7 +8,7 @@
                <div class="card-body">
                   <div class="row">
                      <div class="col" style="text-align:center">
-                           <img width="100px" src="Images/User.png"/>
+                           <img width="100" src="Images/User.png"/>
                      </div>
                   </div>
 
